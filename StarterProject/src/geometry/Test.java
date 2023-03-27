@@ -89,11 +89,24 @@ public class Test {
 		System.out.println("X coord of center of circle c1: " + c1.getCenter().getX());
 		System.out.println("Y coord of center of circle c1: " + c1.getCenter().getY());
 		
+		// Vežbe 4 
+		System.out.println(point1.toString());
+		System.out.println(l1);
+		System.out.println(c1);
+		System.out.println(r1);
 		
+		int a = 5; 
+		int b = 5;
+		System.out.println(a == b);
 		
+		String s1  = new String("Hello");
+		String s2  = new String("Hello");
+		System.out.println(s1 == s2);   // poredjenje po referenci
+		System.out.println(s1.equals(s2)); // poredjenje po vrednosti
 		
-		
-		
+		Point p3 = new Point(23,5);
+		System.out.println(point1 == p3);
+		System.out.println(point1.equals(p3));
 	}
 
 }

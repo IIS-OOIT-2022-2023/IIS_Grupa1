@@ -7,6 +7,21 @@ public class Rectangle {
 	private int height;
 	private boolean selected;
 	
+	public Rectangle() {
+		
+	}
+	
+	public Rectangle(Point upperLeftPoint, int width, int height) {
+		this.upperLeftPoint = upperLeftPoint;
+		this.width = width; 
+		this.height = height;
+	}
+	
+	public Rectangle(Point upperLeftPoint, int width, int height, boolean selected) {
+		this(upperLeftPoint, width, height); 
+		this.selected = selected;
+	}
+	
 	//Povrsina pravougaonika P=w*h
 	public int area() {
 		return width * height;
@@ -15,6 +30,28 @@ public class Rectangle {
 	//Obim pravougaonika 
 	public int circumference() {
 		return 2*(width + height);
+	}
+		
+	public boolean contains(int x, int y) {
+		return (x >= upperLeftPoint.getX() && x <= upperLeftPoint.getX() + width 
+				&& y >= upperLeftPoint.getY() && y <= upperLeftPoint.getY() + height);
+	}
+	
+	public String toString() {
+		return "Upper left point: " + upperLeftPoint + ", width = " + width + ", height = " + height;
+	}
+	
+	public boolean equals(Object obj) {
+		if (obj instanceof Rectangle) {
+			Rectangle pomocna = (Rectangle) obj;
+			if (this.upperLeftPoint.equals(pomocna.upperLeftPoint) && this.width == pomocna.width
+					&& this.height == pomocna.height)
+				return true;
+			else 
+				return false;
+		} else 
+			return false;
+			
 	}
 	
 	//Metode pristupa
