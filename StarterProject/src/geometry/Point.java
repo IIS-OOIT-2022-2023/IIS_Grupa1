@@ -1,10 +1,11 @@
 package geometry;
 
-public class Point {
+import java.awt.Graphics;
+
+public class Point extends Shape{
 
 	private int x;
 	private int y;
-	private boolean selected;
 	
 	public Point() {
 		
@@ -63,19 +64,10 @@ public class Point {
 	public void setY(int y) {
 		this.y = y; 
 	}
-	// u slučaju boolean promenljivih GET metodu nazivamo IS<nazivObelezja>...
-	public boolean isSelected() {
-		return selected;
+
+	@Override
+	public void draw(Graphics g) {
+		g.drawLine(x-2, y, x+2, y);  //horizontalna linija
+		g.drawLine(x,y-2, x, y+2); //vertikalna linija
 	}
-	public void setSelected(boolean newSelected) {
-		selected = newSelected;
-	}
-	
-	
-	
-	
-	
-	
-	
-	
 }
