@@ -1,5 +1,7 @@
 package geometry;
 
+import java.util.Arrays;
+
 public class Test {
 
 	public static void main(String[] args) {
@@ -107,6 +109,59 @@ public class Test {
 		Point p3 = new Point(23,5);
 		System.out.println(point1 == p3);
 		System.out.println(point1.equals(p3));
+		
+		//vežbe 7
+		System.out.println(point1);
+		point1.moveTo(5,5);
+		System.out.println("Nakon poziva metode moveTo: " + point1);
+		point1.moveBy(2,4);
+		System.out.println("Nakon poziva metode moveBy: " + point1);
+		
+		int [] ints = {5, 2, 4, 3, 1};
+		System.out.println("Nesortiran niz");
+		for(int i = 0; i < ints.length; i++) {
+			System.out.println(ints[i]);
+		}
+		
+		Arrays.sort(ints);
+		
+		System.out.println("Sortiran niz");
+		for(int i = 0; i < ints.length; i++) {
+			System.out.println(ints[i]);
+		}
+		
+		Point [] points = { point1, p2, p3};
+		System.out.println("Nesortiran niz");
+		for(int i = 0; i< points.length; i++) {
+			System.out.println(points[i]);
+		}
+		
+		Arrays.sort(points); 
+		
+		System.out.println("Sortiran niz");
+		for(int i = 0; i< points.length; i++) {
+			System.out.println(points[i]);
+		}
+		
+		
+		Circle [] circles = new Circle[3];
+		Circle c10 = new Circle(new Point(10,10), 40);
+		Circle c20 = new Circle(new Point(20,20), 25);
+		Circle c30 = new Circle(new Point(30,30), 50);
+		circles[0] = c10;
+		circles[1] = c20;
+		circles[2] = c30;
+		
+		System.out.println("Nesortiran niz");
+		for(int i = 0; i< circles.length; i++) {
+			System.out.println(circles[i]);
+		}
+		Arrays.sort(circles);
+		System.out.println("Sortiran niz");
+		for(int i = 0; i< circles.length; i++) {
+			System.out.println(circles[i]);
+		}
+		
 	}
 
 }
